@@ -12,7 +12,7 @@ namespace ProjectTrackingSystem.Business
 
             //UnitOfWork kullanılabilir.
             ProjectDal projectDal = new ProjectDal();
-            var response = projectDal.CreateProject(request);
+            var response = projectDal.Insert(request);
 
             if (!response.IsSuccess)
             {

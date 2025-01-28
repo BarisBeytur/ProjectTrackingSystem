@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace ProjectTrackingSystem.DataAccess
 {
+    // Generic repository dp kullanılabilir.
     public class ProjectDal
     {
 
-        public ProjectResponse CreateProject(ProjectRequest request)
+        public ProjectResponse Insert(ProjectRequest request)
         {
             // automapper kullanılabilir.
             ProjectManagementDbContext dbContext = new ProjectManagementDbContext();
