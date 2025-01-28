@@ -18,11 +18,17 @@ namespace ProjectTrackingSystem.Api.Controllers
         }
 
         [HttpPost(Name = "CreateProject")]
-        public ProjectResponse Create([FromBody]ProjectRequest request)
+        public IActionResult Create([FromBody]ProjectRequest request)
         {
             ProjectService projectService = new ProjectService();
-            return projectService.CreateProject(request);
+            var response = projectService.CreateProject(request);
 
+            if (!response.IsSuccess)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
         }
     }
 }
