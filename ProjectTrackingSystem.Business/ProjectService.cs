@@ -9,6 +9,8 @@ namespace ProjectTrackingSystem.Business
 
         public ProjectResponse CreateProject(ProjectRequest request)
         {
+
+            //UnitOfWork kullanılabilir.
             ProjectDal projectDal = new ProjectDal();
             var response = projectDal.CreateProject(request);
 
@@ -27,8 +29,6 @@ namespace ProjectTrackingSystem.Business
                 Message = "Project created successfully",
                 Id = response.Id
             };
-
-
 
         }
 
