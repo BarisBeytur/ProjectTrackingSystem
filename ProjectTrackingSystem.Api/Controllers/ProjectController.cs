@@ -18,7 +18,7 @@ namespace ProjectTrackingSystem.Api.Controllers
         }
 
         [HttpGet(Name = "CreateProject")]
-        public ProjectResponse Create(ProjectRequest request)
+        public ProjectResponse Create([FromBody]ProjectRequest request)
         {
             ProjectService projectService = new ProjectService();
             return projectService.CreateProject(request);
