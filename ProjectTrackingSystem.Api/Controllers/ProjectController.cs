@@ -20,6 +20,8 @@ namespace ProjectTrackingSystem.Api.Controllers
         [HttpPost(Name = "CreateProject")]
         public IActionResult Create([FromBody]ProjectRequest request)
         {
+            // request ve response'lar middleware aracýlýgýyla loglanabilir.
+
             ProjectService projectService = new ProjectService();
             var response = projectService.CreateProject(request);
 
